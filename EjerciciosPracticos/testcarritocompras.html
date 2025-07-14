@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Carrito de Compras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #carrito {
+      margin-top: 20px;
+    }
+    #lista-carrito {
+      list-style: none;
+      padding: 0;
+    }
+    #lista-carrito li {
+      background-color: #f4f4f4;
+      margin: 5px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    #vaciar-carrito {
+      margin-top: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    .agregar-carrito {
+      margin: 5px;
+      padding: 5px 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Productos</h1>
+  <button class="agregar-carrito" data-id="1" data-nombre="Producto A" data-precio="100">Agregar Producto A</button>
+  <button class="agregar-carrito" data-id="2" data-nombre="Producto B" data-precio="200">Agregar Producto B</button>
+
+  <div id="carrito">
+    <h2>Carrito de Compras</h2>
+    <ul id="lista-carrito"></ul>
+    <button id="vaciar-carrito">Vaciar Carrito</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      cargarCarrito();
+    });
+
+    const botonesAgregar = document.getElementsByClassName('agregar-carrito');
+    for (let i = 0; i < botonesAgregar.length; i++) {
+      botonesAgregar[i].addEventListener('click', agregarProducto);
+    }
+
+    document.getElementById('vaciar-carrito').addEventListener('click', function() {
+      localStorage.removeItem('carrito');
+      cargarCarrito();
+    });
+
+    function agregarProducto(event) {
+      const producto = {
+        id: event.target.getAttribute('data-id'),
+        nombre: event.target.getAttribute('data-nombre'),
+        precio: event.target.getAttribute('data-precio')
+      };
+
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push(producto);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      cargarCarrito();
+    }
+
+    function cargarCarrito() {
+      const listaCarrito = document.getElementById('lista-carrito');
+      listaCarrito.innerHTML = '';
+
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      for (let i = 0; i < carrito.length; i++) {
+        const producto = carrito[i];
+        const li = document.createElement('li');
+        li.textContent = producto.nombre + ' - $' + producto.precio;
+        listaCarrito.appendChild(li);
+      }
+    }
+  </script>
+
+</body>
+</html>

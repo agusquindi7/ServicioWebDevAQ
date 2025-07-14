@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+
+<!--Google Fonts-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Tagesschrift&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Tagesschrift&display=swap" rel="stylesheet">
+
+<!--FlatIcon-->
+<link rel=\stylesheet\ 
+href=\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\> 
+
+<title>Agustin Quindimil</title>
+
+</head>
+
+<body>
+    
+<script src="script.js"></script>
+
+<div class="header">
+        <div class="banner">
+        <h1 style="padding-top: 1em; padding-left: 30px;"><strong>Arma tu pagina web hoy!</strong></h1>
+        <h2 style="margin-left: 30px; margin-bottom: 10px;"><em>Servicio de armado de paginas Web</em></h2>
+    </div>
+</div> 
+
+<nav class="navbar">
+    <ul style="display: flex;">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="carritoejemplo.html">Ejemplo de carrito de compras</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="reviews.html">Reseñas</a></li>
+        <li style="margin-left: auto;">
+          <button id="boton-carrito" class="boton-carrito">
+            <img src="imagenes/add-to-cart (1).png" alt="Carrito" class="carrito-img" />
+            <div id="cart-counter" style="color: azure;">0</div>
+          </button>
+          <!-- Script simple para mandarnos adentro del carrito -->
+           <script> 
+            const botonCarrito = document.getElementById("boton-carrito")
+            .addEventListener('click', () => {
+              window.location.href = "carrito.html";
+            });
+           </script>
+          <button id="vaciar-carrito" class="boton-carrito">
+          <img src="imagenes/empty-cart.png" alt="Carrito" style="filter: invert(1); height: 32px; width: auto;"/>  
+          <div style="color: azure;"> Vaciar Carrito </div>
+          <script>
+            const btn = document.getElementById("vaciar-carrito");
+            
+            btn.addEventListener("click", () => {
+            localStorage.removeItem("carrito");
+            alert("Carrito vaciado");
+            actualizarCarrito();
+            //mostrarCarritoConLocalStorage();
+            });
+          </script>
+          </button>
+        </li> 
+    </ul>
+</nav>
+   
+
+<main>
+
+     <!--Aca estamos en el main-->
+<section> 
+    <h3>Ejemplo de productos para paginas con carrito de compras dinamico</h3>
+    <div id="productos-container"></div>
+
+</section> 
+
+<section>
+
+
+
+</div>
+
+</main>
+ 
+<footer>
+<div class="footer" style="margin-top: 50px;">
+    <p class="parrafo-one">© 2025 Agustin Quindimil. Todos los derechos reservados.</p>
+    <p class="parrafo-one">Desarrollado por Agustin Quindimil</p>
+</div> 
+</footer>
+
+</body>
+
+</html>

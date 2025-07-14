@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--FlatIcon-->
+    <link rel=\stylesheet\
+    href=\https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css\>
+
+    <title>Agustin Quindimil</title>
+  </head>
+
+  <body>
+    <script src="script.js"></script>
+
+    <div class="header">
+      <div class="banner">
+        <h1 style="padding-top: 1em; padding-left: 30px">
+          <strong>Arma tu pagina web hoy!</strong>
+        </h1>
+        <h2 style="margin-left: 30px; margin-bottom: 10px">
+          <em>Servicio de armado de paginas Web</em>
+        </h2>
+      </div>
+    </div>
+
+    <nav class="navbar">
+      <ul style="display: flex">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="carritoejemplo.html">Ejemplo de carrito de compras</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="reviews.html">Reseñas</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="contacto">
+        <h1 style="color: white">¿Querés contactarnos por correo?</h1>
+        <form
+          action="https://formspree.io/f/xanorpoa"
+          method="POST"
+          class="contact-form"
+        >
+          <div class="form-group">
+            <label for="name">Tu nombre completo</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Tu mail</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Tu teléfono</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tu mensaje</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Enviar</button>
+        </form>
+      </section>
+
+      <section style="text-align: center">
+        <h1>No es nuestra ubicacion pero me gusta esta ubicacion</h1>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d76832.57504203907!2d78.56706874346209!3d53.002061253272146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42fb07b180a526ed%3A0xff714ef943e6effd!2sSl%C3%A1vgorod%2C%20Macizo%20de%20Alt%C3%A1i%2C%20Rusia!5e0!3m2!1ses!2sar!4v1752353811388!5m2!1ses!2sar"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer" style="margin-top: 50px">
+        <p class="parrafo-one">
+          © 2025 Agustin Quindimil. Todos los derechos reservados.
+        </p>
+        <p class="parrafo-one">Desarrollado por Agustin Quindimil</p>
+      </div>
+    </footer>
+  </body>
+</html>

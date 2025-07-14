@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>TEST</title>
+</head>
+<body>
+    <h1 id="text1">Texto Inicial</h1>
+    <button id="button1">Cambiar texto y añadir a lista</button>
+    <script>
+        let text = document.getElementById("text1");
+        let button = document.getElementById("button1");
+
+        button.addEventListener("click", () => {
+            text.textContent = "QUE APRETAS EL BOTON CORNETA???";
+        });
+    </script>
+    <ul id="list">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <script>
+        let list = document.getElementById("list");
+        let counter = 1;
+        button.addEventListener("click", ()=> 
+        {
+        let newElement = document.createElement("li");
+        newElement.textContent = "Nuevo Elemento "+ counter;
+        list.appendChild(newElement);
+        counter ++;
+        alert("NUEVO ELEMENTO CREADO SOS UN PELOTUDO!");
+        })
+    </script>
+
+    <input id="inputName" type="text">
+    <button id="buttonName" type="submit">Cambiar nombre</button>
+    <br> <p id="name"></p>
+    <br>
+    <br>
+    <input id="inputColor" type="color">
+    <button id="buttonColor" type="submit">Cambiar color</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        LoadData();
+        });
+
+        let inputName = document.getElementById("inputName");
+        let buttonName = document.getElementById("buttonName");
+        let inputColor = document.getElementById("inputColor");
+        let buttonColor = document.getElementById("buttonColor");
+        let pName = document.getElementById("name");
+        buttonName.addEventListener("click", ()=> {
+            pName.textContent = inputName.value;
+            localStorage.setItem('inputName',inputName.value);
+            alert("NAME CHANGED SUCCESFULLY!");             
+        });
+        buttonColor.addEventListener("click", ()=> {
+            document.body.style.backgroundColor = inputColor.value;
+            localStorage.setItem('inputColor',inputColor.value);
+            alert("COLOR CHANGED SUCCESFULLY!");          
+        });
+
+        function LoadData(){
+            pName.textContent = localStorage.getItem("inputName");
+            document.body.style.backgroundColor = localStorage.getItem("inputColor");
+        }
+    </script>
+
+</body>
+</html>
