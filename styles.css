@@ -157,7 +157,7 @@ h2 {
 }
 
 p {
-  font-family: Ancizar Serif, serif;
+  font-family: arial, Helvetica, sans-serif;
   font-weight: 200px;
   font-style: normal;
 }
@@ -344,9 +344,18 @@ p {
   }
 }
 
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200px;
+  font-style: normal;
+  color: white;
+  text-align: center;
+}
+
 /* Cards para productos */
 .js-card {
   width: 280px;
+  font-family: Arial, Helvetica, sans-serif;
   height: auto; /* Ajusta este valor según lo que necesites */
   background: #3f3f3f;
   color: #fff;
